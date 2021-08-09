@@ -48,20 +48,35 @@
 <body>
 <p id="par" dir="rtl" lang="ar">
 
-</p>
+
+
+<textarea id="message" rows="10" cols="20">
+
+</textarea>
+<br>
+<button onclick="repp()"> &#9996 تحويل الى نص آمن</button>
+<br>
+<textarea id="par" rows="10" cols="20">
+
+</textarea>
+
+
 <script>
-repp()
+
 function repp()
 {
-tokens=['hez','say']
+tokens=['hezب' ,'sayد'] 
 tok=['حزب','سيد']
-var string = window.prompt("من فضلك أدخل النص هنا ");
+var string =document.getElementById("message").value
+
+//var string = window.prompt("أدخل النص هنا: ");
 
 for (var i = 0; i < tokens.length; i++) {
     string=string.replace(new RegExp(tok[i],"g"),tokens[i]);}
 document.getElementById("par").innerHTML=string;  
 }
 </script>
+
     <div id="wrapper">
         <div class="collapse top-search" id="collapseExample">
             <div class="card card-block">
