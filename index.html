@@ -1,24 +1,55 @@
 <html dir="rtl" lang="ar">
 
-<textarea id="message" rows="10" cols="20">
-</textarea>
+<head>
+<title>أوهن من بيت العنكبوت</title>
+</head>
+<body style="background-color:rgb(108,164,225)">
+<div style="width:100%;  background-color:rgb(79,85,81); color:rgb(206,0,0); text-align:center; padding:20px; font-size:24px; font-weight:bold;">
+أوهن من بيت العنكبوت </div>
+<img style="border-radius:10%; margin-top:200px; margin-left:100px" src="bayt.jpg" align="left" width="20%">
 <br>
-<button onclick="repp()"> &#9996 تحويل الى نص آمن</button>
-<br>
-<textarea id="par" rows="10" cols="20">
-</textarea>
+<div style="margin-right:10; font-family:calibri;">
+<p>يهدف هذا الموقع الى تجنب الحظر على وسائل التواصل الاجتماعي عبر تحويل الكلمات المفتاحية الممنوعة الى كلمات مسموحة لكي يصبح النص آمنًا للنشر.</p>
+<p>وبذلك يسهل عليك نسخ نصوص كاملة دون الحاجة الى تفقدها وتصحيحها كلمة بكلمة</p>
+<p></p>
+<ul>
+<li>انسخ النص الذي تريد تصحيحه الى المربع الاول</li>
+<li>اضغط على  :"تحويل الى نص آمن" </li>
+<li>بعد تصحيح النص، اضغط على "انسخ النص" </li>
+<li>وبعدها ألصقه حيث شئت في مواقع التواصل</li>
+</ul>
+	<textarea id="message" rows="15" cols="40" style="padding:10px" placeholder="أدخل النص الأصلي هنا..."></textarea>
+	<textarea id="par" rows="15" cols="40" style="padding:10px"></textarea>
+	<br><br>
+	<button style="padding: 15px 32px;font-size: 16px; border-radius:30%;" onclick="rep()"> تحويل الى نص آمن &#9996</button>
+	
+	<button style="padding: 15px 32px;font-size: 16px; margin-right:200px; border-radius:30%;" onclick="sel()"> انسخ النص</button>
+	<p id="copied" style="display:inline"></p>
+	
+</div>
 <script>
-function repp()
+function rep()
 {
 tokens=['hezب' ,'sayد'] 
-tok=['حزب','سيد']
+tok=['سيد','حزب','مقاومة','مجاهد','نصر','سماحة','شهداء','شهيد','منار','حماس','إسلام','اسلام','صاروخ','صواريخ','خامنئي','خميني','ايران','إيران','تحرير','إسرائيل','اسرائيل']
 var string =document.getElementById("message").value
-
-
 
 for (var i = 0; i < tokens.length; i++) {
     string=string.replace(new RegExp(tok[i],"g"),tokens[i]);}
 document.getElementById("par").innerHTML=string;  
+document.getElementById('copied').innerHTML="";
+}
+
+function sel()
+{
+var text_val = document.getElementById('par');
+//text_val.focus(); // Focus on textarea 
+text_val.select();// Select all text  
+document.execCommand("Copy");
+document.getElementById('copied').innerHTML="تم نسخ النص ";
+//document.getElementById('my_msg').innerHTML=" Text Copied.. <br>Paste by usnig Ctrl + V at right > textarea";
+//document.getElementById('t2').focus();
 }
 </script>
+</body>
 </html>
