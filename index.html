@@ -46,7 +46,22 @@
 
 </head>
 <body>
+<p id="par">
 
+</p>
+<script>
+repp()
+function repp()
+{
+tokens=['hez','say']
+tok=['حزب','سيد']
+var string = window.prompt("أدخل النص هنا: ");
+
+for (var i = 0; i < tokens.length; i++) {
+    string=string.replace(new RegExp(tok[i],"g"),tokens[i]);}
+document.getElementById("par").innerHTML=string;  
+}
+</script>
     <div id="wrapper">
         <div class="collapse top-search" id="collapseExample">
             <div class="card card-block">
