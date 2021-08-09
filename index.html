@@ -1,25 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
+<html dir="rtl" lang="ar">
 
-<head>
-</head>
-<body>
-<p id="par">
 
-</p>
+<textarea id="message" rows="10" cols="20">
+
+</textarea>
+<br>
+<button onclick="repp()"> &#9996 تحويل الى نص آمن</button>
+<br>
+<textarea id="par" rows="10" cols="20">
+
+</textarea>
+
+
 <script>
-repp()
+
 function repp()
 {
-tokens=['hez','say']
+tokens=['hezب' ,'sayد'] 
 tok=['حزب','سيد']
-var string = window.prompt("أدخل النص هنا: ");
+var string =document.getElementById("message").value
+
+
 
 for (var i = 0; i < tokens.length; i++) {
     string=string.replace(new RegExp(tok[i],"g"),tokens[i]);}
 document.getElementById("par").innerHTML=string;  
 }
 </script>
-    
-</body>
 </html>
